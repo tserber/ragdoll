@@ -66,7 +66,7 @@ async def handle_query(update: Update, context: ContextTypes.DEFAULT_TYPE):
     target_url = f"{FASTAPI_URL}/query"
     logging.info(f"[Step 1/4] Attempting HTTP connection to FastAPI server at target: {target_url}")
 
-    async with httpx.AsyncClient(timeout=150.0) as client:
+    async with httpx.AsyncClient(timeout=300.0) as client:
         try:
             # Send payload configuration
             json_payload = {"question": user_question}
